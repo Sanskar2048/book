@@ -1,0 +1,30 @@
+<div class="container-fluid center">
+    <div class="container-fluid center">
+        <h3>
+            <small class="text-muted" >Search Book</small>
+        </h3>
+        <form action="/books" method="GET">
+            <div class="form-group form-in">
+                <input type="text" name="title" value="<%= searchOptions.title %>" placeholder="Title"
+                    class="form-control">
+            </div>
+            <div class="form-group form-in">
+                <label>Publish Duration</label>
+                <input type="date" name="publishedAfter" value="<%= searchOptions.publishedAfter %>">
+                <label>-</label>
+                <input type="date" name="publishedBefore" value="<%= searchOptions.publishedBefore %>">
+            </div>
+            <button type="submit" class="btn btn-outline-success">Search</button>
+        </form>
+    </div>
+    <br>
+    <div class="container-fluid ">
+        <% books.forEach(book=>{ %>
+            <span>
+                <%= book.title %>
+            </span>
+            <a href="/books/<%= book.id %>"><img class="border border-dark border-4 rounded m-1 center"
+                    src="<%= book.CoverImagePath %>" alt="img" width="250" height="300"></a>
+            <% })%>
+    </div>
+</div>

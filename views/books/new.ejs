@@ -1,0 +1,14 @@
+<div class="container-fluid center m-2">
+    <div class="card border-success mb-3  center" style="max-width: 18rem;">
+        <div class="card-header bg-transparent border-success"><h2>New Book</h2></div>
+        <form action="/books" method="POST" enctype="multipart/form-data">
+            <div class="card-body text-success">
+                <%- include('form_field.ejs')%>
+            </div>
+            <div class="card-footer bg-transparent border-success">
+                <a href="/books"><button type="submit" class="btn btn-outline-danger">Cancel</button></a>
+                <button type="submit" class="btn btn-outline-success">Create</button>
+            </div>
+        </form>
+    </div>
+</div>

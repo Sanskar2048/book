@@ -1,0 +1,12 @@
+<div class="container-fluid center">
+    <h3>
+        <small class="text-muted">New Authors</small>
+    </h3>
+    <form action="/authors" method="POST" class="center">
+        <div class="search-container container-fluid">
+            <%- include('form_field.ejs')%>
+                <a href="/authors"><button class="btn btn-outline-danger">Cancel</button></a>
+                <button type="submit" class="btn btn-outline-success">Create</button>
+        </div>
+    </form>
+</div>

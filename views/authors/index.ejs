@@ -1,0 +1,32 @@
+<div class="container-fluid center">
+    <h3>
+        <small class="text-muted">Search Author</small>
+    </h3>
+    <form action="/authors" method="GET" class="center">
+        <div class="search-container container-fluid">
+            <input type="text" name="name" placeholder="Enter Name" class="form-control" autocomplete="off"
+                style="width: 80%; display:inline;" value="<%= searchOptions %>">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </form>
+
+    <br>
+    <div class="container-fluid " style="margin:auto;">
+        <% authors.forEach(author=>{ %>
+            <div class="p-1"
+                style=" display:flex; flex-direction: row; justify-content:space-between; background-color:rgba(125, 125, 125, 0.196); width:80%; margin:1% 1% 1% 10%;">
+                <div
+                    style="display: inline; font-style:italic; padding-left:10px; font-family: 'Times New Roman', Times, serif;">
+                    <%= author.name%>
+                </div>
+                <div style="display: inline;">
+                    <a href="/authors/<%= author.id %>"><button type="button"
+                            class="btn btn-outline-success">view</button></a>
+                    <a href="/authors/<%= author.id %>/edit"><button type="button"
+                            class="btn btn-outline-warning">edit</button></a>
+                    <%- include("../partials/delete_form" ,{ url : `/authors/${author.id}`})%>
+                </div>
+            </div>
+            <% })%>
+    </div>
+</div>

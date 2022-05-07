@@ -1,0 +1,12 @@
+<div class="container-fluid center">
+    <h3>
+        <small class="text-muted" >Recently Added To Store</small>
+    </h3>
+    <div class="container-fluid ">
+        <% books.forEach(book=>{ %>
+            <span><%= book.title %></span>
+            <a href="/books/<%= book.id %>"><img class="border border-dark border-4 rounded m-1 center" src="<%= book.CoverImagePath %>" alt="img" width="250"
+                    height="300"></a>
+            <% })%>
+    </div>
+</div>
